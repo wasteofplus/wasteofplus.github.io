@@ -1,0 +1,16 @@
+"use client";
+
+import styles from "./page.module.css";
+import HeroSection from "./components/HeroSection";
+import FeatureSection from "./components/FeatureSection";
+import NavBar from "./components/NavBar";
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+      <NavBar/>
+      <HeroSection />
+      <FeatureSection />
+    </main>
+  );
+}
