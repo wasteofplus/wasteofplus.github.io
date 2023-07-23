@@ -27,8 +27,11 @@ const NavBar = () => {
       if (themeToggleBtn != null) {
       themeToggleBtn.addEventListener("click", function () {
         // toggle icons inside button
-        themeToggleDarkIcon!.classList.toggle("hidden");
-        themeToggleLightIcon!.classList.toggle("hidden");
+        if (themeToggleLightIcon != null && themeToggleDarkIcon != null) {
+
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+        }
 
         // if set via local storage previously
         if (localStorage.getItem("color-theme")) {
