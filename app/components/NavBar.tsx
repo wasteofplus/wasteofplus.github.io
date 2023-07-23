@@ -58,7 +58,7 @@ const NavBar = () => {
     }
   }
   return (
-    <Navbar fluid={true} rounded={true}>
+    <Navbar className="fixed w-full" fluid={true} rounded={true}>
       <Navbar.Brand href="https://flowbite.com/">
         <Image
           height="40"

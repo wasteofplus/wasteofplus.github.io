@@ -3,15 +3,18 @@
 import styles from "./page.module.css";
 import HeroSection from "./components/HeroSection";
 import FeatureSection from "./components/FeatureSection";
+import AddonsSection from "./components/AddonsSection";
+
 import NavBar from "./components/NavBar";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className="">
       <NavBar/>
       <HeroSection />
       <FeatureSection />
+      <AddonsSection />
       <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
     <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
