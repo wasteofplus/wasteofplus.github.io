@@ -9,6 +9,17 @@ import NavBar from "./components/NavBar";
 import Image from "next/image";
 
 export default function Home() {
+  if (typeof window !== "undefined") {
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
   return (
     <main className="">
       <NavBar/>
