@@ -110,7 +110,7 @@ const AddonsSection = () => {
       id: "polls",
       title: "Polls",
       description: "Adds polls to wasteof.money.",
-      badge: "Soon!",
+      badge: "New!",
       svg: (
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white"
