@@ -51,7 +51,7 @@ const AddonsSection = () => {
     },
     {
       id: "chat-presence-notifier",
-      title: "Chat Presence Notifiers",
+      title: "Chat Presence Notifier",
       description: "Sends a message in chat when a user joins or leaves a chat.",
       badge: "",
       svg: (
