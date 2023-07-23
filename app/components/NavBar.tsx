@@ -31,7 +31,7 @@ const NavBar = () => {
         console.log('computed style map: ', localStorage.getItem("color-theme") === "light")
         themeToggleDarkIcon.style.display == ((localStorage.getItem("color-theme") === "light") ? "block" : "none") //.toggle("hidden");
         themeToggleLightIcon.style.display == ((localStorage.getItem("color-theme") === "dark") ? "block" : "none") // .classList.toggle("hidden");
-        if (localStorage.getItem("color-theme") === "light")
+        if (localStorage.getItem("color-theme") === "light") {
             
         }
 
