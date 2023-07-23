@@ -7,7 +7,7 @@ const AddonsSection = () => {
       title: "Desktop Notifications",
       description:
         "Show desktop notifications when you recieve a new message on wasteof.money",
-      badge: "Coming Soon!",
+      badge: "Soon!",
       svg: (
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white"
@@ -23,7 +23,7 @@ const AddonsSection = () => {
     {
       id: "extension-badge",
       title: "Extension Badge and Sound",
-      badge: "Coming Soon!",
+      badge: "Soon!",
       description:
         "Shows a custom extension badge with the message count on your browser toolbar and plays a sound when you recieve a new message.",
       svg: (
