@@ -508,7 +508,7 @@ export default function Home() {
         <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
                 <a href="https://flowbite.com" className="flex items-center">
-                    <Image src="/wasteofplus.svg" className="mr-3 h-8" alt="Wasteof.plus Logo" />
+                    <Image src="/wasteofplus.svg" width="20" height="20" className="logo mr-3 h-12" alt="Wasteof.plus Logo" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
                 </a>
             </div>

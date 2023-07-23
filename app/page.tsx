@@ -17,8 +17,8 @@ export default function Home() {
         <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
                 <a href="https://flowbite.com" className="flex items-center">
-                    <Image src="/wasteofplus.svg" className="mr-3 h-8" alt="Wasteof.plus Logo" />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <Image src="/wasteofplus.svg" width="40" height="40" className="logo mr-3 h-10" alt="Wasteof.plus Logo" />
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Wasteof.Plus</span>
                 </a>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -26,25 +26,52 @@ export default function Home() {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://flowbite.com" className="hover:underline">Flowbite</a>
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/issues" className="hover:underline">Reporting Issues</a>
                         </li>
-                        <li>
-                            <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/discussions" className="hover:underline">Discussions</a>
+                        </li>
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/actions" className="hover:underline">Actions</a>
+                        </li>
+
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/releases" className="hover:underline">Releases</a>
                         </li>
                     </ul>
                 </div>
+                
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
+                            <a href="https://github.com/imadeanaccount1/wasteofplus" className="hover:underline ">Github</a>
                         </li>
                         <li>
-                            <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
+                            <a href="https://wasteof.money/wasteof.plus" className="hover:underline">Wasteof.Money</a>
                         </li>
                     </ul>
                 </div>
+
                 <div>
+                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">DOCUMENTATION</h2>
+                    <ul className="text-gray-600 dark:text-gray-400">
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/README.md" className="hover:underline ">README.md</a>
+                        </li>
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/CONTRIBUTING.md" className="hover:underline">Contributing</a>
+                        </li>
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/LICENSE" className="hover:underline">License</a>
+                        </li>
+                        <li className="mb-4">
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/SECURITY.md" className="hover:underline">Security Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                {/* <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
@@ -54,12 +81,12 @@ export default function Home() {
                             <a href="#" className="hover:underline">Terms &amp; Conditions</a>
                         </li>
                     </ul>
-                </div>
+                </div> */}
             </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" className="hover:underline">Flowbite™</a>. All Rights Reserved.
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" className="hover:underline">wasteof.plus</a>. All Rights Reserved.
             </span>
             <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
