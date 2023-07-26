@@ -7,22 +7,29 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 export default function App() {
     console.log(path.resolve('pages'))
-    const files = fs.readdirSync(path.resolve('app/docs/pages'))
-  const posts = files.map((filename : any) => {
-    const markdownWithMeta = fs.readFileSync(path.resolve('app/docs/pages', filename), 'utf-8')
+    const files = fs.readdirSync(path.resolve('app/docs/pages'), {
+      withFileTypes: true,
+    })
+  const posts = files.map((file : any) => {
+    if (!file.isDirectory()) {
+
+    const markdownWithMeta = fs.readFileSync(path.resolve('app/docs/pages', file.name), 'utf-8')
     console.log('front matter', matter(markdownWithMeta))
     const { data: frontMatter } = matter(markdownWithMeta)
-    console.log('slug is', filename.split('.')[0])
+    console.log('slug is', file.name.split('.')[0])
     console.log('slug is', frontMatter.title)
 
     return {
       frontMatter,
-      slug: filename.split('.')[0]
+      slug: file.name.split('.')[0]
     }
+  }
   })
+  
     return (
         <>
         {posts.map((post, index) => (
+          (post != undefined) ? (
             <Link href={'/blog/' + post.slug} passHref key={index}>
               <div className="card mb-3 pointer" style={{ maxWidth: '540px' }}>
                 <div className="row g-0">
@@ -48,6 +55,9 @@ export default function App() {
                 </div>
               </div>
             </Link>
+          ) : (
+            null
+          )
           ))}
           </>
     )

@@ -21,10 +21,19 @@ import { CustomDivider } from "../components/user/CustomLayout";
 
 export default function Doc({ params }: { params: { slug: string } }) {
     // Get this page's markdown data
-    const source = fs.readFileSync(
+    let source = null;
+    console.log('params.slug', params.slug)
+    if (params.slug.includes("%5Bslug%5D")) {
+      source = fs.readFileSync(
+        path.resolve("app/docs/pages/", `getting-started.mdx`),
+        "utf8"
+      );
+    } else {
+    source = fs.readFileSync(
       path.resolve("app/docs/pages/", `${params.slug}.mdx`),
       "utf8"
     );
+    }
 
     const { data, content } = matter(source);
     const markdownBody = content;
