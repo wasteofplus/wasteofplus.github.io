@@ -240,12 +240,12 @@ export default function Post({ params }: { params: { slug: string } }) {
   //       console.log(err);
   //       return <div>ERROR</div>;
   //     });
-  const components = {
-    h1: CustomH1,
-    h1: CustomH2,
+  // const components = {
+  //   h1: CustomH1,
+  //   h2: CustomH2,
 
-    // Add other custom components for different heading levels if needed.
-  };
+  //   // Add other custom components for different heading levels if needed.
+  // };
   const Component = dynamic(() => import(`../pages/${params.slug}.mdx`));
   // console.log('front matter', matter(Component).content)
   function getFolderFiles(folderPath: string, structure : any[]) {
@@ -651,6 +651,7 @@ export default function Post({ params }: { params: { slug: string } }) {
           <ReactMarkdown
             components={{
               h1: CustomH1,
+              h2: CustomH2,
             }}
           >
             {markdownBody}
