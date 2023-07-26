@@ -7,4 +7,9 @@ const CustomH1 = (props : any) => {
     );
   };
   
-  export { CustomH1 };
+const CustomH2 = (props : any) => {
+  return (
+    <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">{props.children}</h2>
+  )
+}
+  export { CustomH1, CustomH2 };
