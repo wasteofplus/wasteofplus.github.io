@@ -30,6 +30,7 @@ import { CustomH1, CustomH2 } from "../components/CustomHeadings";
 // }
 
 export default function Post({ params }: { params: { slug: string } }) {
+  if (typeof window !== "undefined") {
   const source = fs.readFileSync(
     path.resolve("app/docs/pages/", `${params.slug}.mdx`),
     "utf8"
@@ -37,6 +38,7 @@ export default function Post({ params }: { params: { slug: string } }) {
 
   const { data, content } = matter(source);
   const markdownBody = content;
+  }
 
   if (typeof window !== "undefined") {
     var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
@@ -261,8 +263,11 @@ export default function Post({ params }: { params: { slug: string } }) {
           title: file.name,
           children: getFolderFiles(path.join(folderPath, file.name), []),
         });
-        ;
       } else {
+        const markdownWithMeta = fs.readFileSync(path.resolve('app/docs/pages', file.name), 'utf-8')
+        console.log('front matter', matter(markdownWithMeta))
+        const {data: frontMatter} = matter(markdownWithMeta)
+        console.log(frontMatter.title)
         mutatedStrtucture.push({
           id: file.name,
           title: file.name,
@@ -691,8 +696,4 @@ export default function Post({ params }: { params: { slug: string } }) {
       </main>
     </div>
   );
-}
-
-async function getPostData(title: any) {
-  return dynamic(() => import(`../pages/${title}.mdx`));
 }
