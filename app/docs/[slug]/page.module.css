@@ -4,8 +4,13 @@
 
 .sidebar {
     margin-top: 60px;
+    width: 292px;
 }
 
 .indent {
-    padding-left: 16px;
+    padding-left: 12px;
+}
+
+.mainBar {
+    margin-left: 316px;
 }

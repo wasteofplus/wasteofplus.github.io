@@ -9,7 +9,7 @@ const CustomH1 = (props : any) => {
   
 const CustomH2 = (props : any) => {
   return (
-    <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Hello! {props.children}</h2>
+    <h2 className="mb-3 text-2xl lg:text-2xl font-bold text-gray-900 dark:text-white">Hello! {props.children}</h2>
   )
 }
   export { CustomH1, CustomH2 };

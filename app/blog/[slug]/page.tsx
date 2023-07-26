@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import NavBar from "../../components/NavBar";
-import { Button } from 'flowbite-react';
+// import { Button } from 'flowbite-react';
 
 export default function Home() {
   return (
