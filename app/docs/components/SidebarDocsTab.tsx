@@ -67,8 +67,6 @@ function getFolderFiles(folderPath: string, structure: any[]) {
           slug = "/docs" + folderPath + "/" + file.name.replace(".mdx", "")
         }
 
-        }
-
         mutatedStrtucture.push({
           id: file.name,
           title: frontMatter.title,
