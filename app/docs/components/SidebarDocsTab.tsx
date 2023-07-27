@@ -101,7 +101,20 @@ function getFolderFiles(folderPath: string, structure: any[]) {
           "/" +
           file.name.replace(".mdx", "");
       } else {
+        console.log("evaluating no slash env");
+        console.log("folderpath2", folderPath)
+        console.log("filename2", file.name)
+        console.log("modified filename2", file.name.split("docs/content/"))
+        if (folderPath.split("docs/content/").length==0) {
+          console.log('first if')
         slug = "/docs" + folderPath + "/" + file.name.replace(".mdx", "");
+        console.log('slug', slug)
+        } else {
+          console.log('second if')
+          slug = "/docs" + folderPath.split("docs/content/")[1] + "/" + file.name.replace(".mdx", "");
+          console.log('slug', slug)
+
+        }
       }
 
       mutatedStrtucture.push({
