@@ -49,10 +49,16 @@ function getFolderFiles(folderPath: string, structure: any[]) {
         const { data: frontMatter } = matter(markdownWithMeta);
         console.log(frontMatter.title);
         console.log('folderPath', folderPath)
-        console.log('middle bit', typeof folderPath.split("docs\\content\\")[1])
+        let slug = null;
+        if (folderPath.includes("\\")) {
+        console.log('middle bit', folderPath.split("docs\\content\\")[1])
         console.log('modified', folderPath.split("docs\\content")[1].replace(/\\/g, "/"));
         console.log("new folder path", "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", ""));
-        const slug = "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "");
+        slug = "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "");
+        } else {
+          slug = "/docs" + folderPath.split("docs/content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "")
+        }
+
         mutatedStrtucture.push({
           id: file.name,
           title: frontMatter.title,
