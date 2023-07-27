@@ -25,6 +25,7 @@ function getFolderFiles(folderPath: string, structure: any[]) {
           "/" +
           file.name.replace(".mdx", "");
       } else {
+        console.log('folderpath1', folderPath)
         slug = "/docs/section" + folderPath + "/" + file.name.replace(".mdx", "");
       }
 
