@@ -19,26 +19,19 @@ import { CustomH1, CustomH2 } from "../components/user/CustomHeadings";
 import { CustomImage } from "../components/user/CustomImage";
 import { CustomDivider } from "../components/user/CustomLayout";
 
-export default function Doc({ params }: { params: { slug: string } }) {
+export default function Doc({ params }: { params: { slug: Array<string> } }) {
     // Get this page's markdown data
     let source = null;
     console.log('params.slug', params.slug)
-    if (params.slug.includes("%5Bslug%5D")) {
-      source = fs.readFileSync(
-        path.resolve("app/docs/pages/", `getting-started.mdx`),
-        "utf8"
-      );
-    } else {
     source = fs.readFileSync(
-      path.resolve("app/docs/pages/", `${params.slug}.mdx`),
+      path.resolve("app/docs/content/", `${params.slug.join("/")}.mdx`),
       "utf8"
     );
-    }
 
     const { data, content } = matter(source);
     const markdownBody = content;
 
-    let sidebarTabs: any = getFolderFiles(path.resolve("app/docs/pages/"), []);
+    let sidebarTabs: any = getFolderFiles(path.resolve("app/docs/content/"), []);
     console.log(JSON.stringify(sidebarTabs));
 
     // Setup Sidebar Toggle

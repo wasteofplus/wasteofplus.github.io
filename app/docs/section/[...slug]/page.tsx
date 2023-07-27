@@ -7,13 +7,26 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 export default function App() {
     console.log(path.resolve('pages'))
-    const files = fs.readdirSync(path.resolve('app/docs/pages'), {
+    const files = fs.readdirSync(path.resolve('app/docs/content'), {
       withFileTypes: true,
     })
   const posts = files.map((file : any) => {
-    if (!file.isDirectory()) {
+    if (file.isDirectory()) {
+      const rawJSON = fs.readFileSync(path.resolve('app/docs/content', file.name, 'section.json'), 'utf-8')
+      const json = JSON.parse(rawJSON)
+      const frontMatter = {
+        title: json.title,
+        description: json.description,
+        thumbnailUrl: json.thumbnailUrl,
+        date: json.date
+      }
+      return {
+        frontMatter,
+        slug: file.name.split('.')[0]
+      }
+    } else {
 
-    const markdownWithMeta = fs.readFileSync(path.resolve('app/docs/pages', file.name), 'utf-8')
+    const markdownWithMeta = fs.readFileSync(path.resolve('app/docs/content', file.name), 'utf-8')
     console.log('front matter', matter(markdownWithMeta))
     const { data: frontMatter } = matter(markdownWithMeta)
     console.log('slug is', file.name.split('.')[0])

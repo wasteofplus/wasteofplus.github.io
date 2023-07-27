@@ -11,6 +11,8 @@ function getFolderFiles(folderPath: string, structure: any[]) {
     for (const file of rawFileStructure) {
       if (file.isDirectory()) {
         console.log("recursing through", file);
+        const slug = "/docs/section" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "");
+
         try {
           console.log(
             "reading json",
@@ -25,6 +27,7 @@ function getFolderFiles(folderPath: string, structure: any[]) {
             id: file.name,
             title: json.title,
             children: getFolderFiles(path.join(folderPath, file.name), []),
+            slug: slug,
           });
         } catch (e) {
           console.log("error parsing json", e);
@@ -32,6 +35,7 @@ function getFolderFiles(folderPath: string, structure: any[]) {
             id: file.name,
             title: file.name,
             children: getFolderFiles(path.join(folderPath, file.name), []),
+            slug: slug,
           });
         }
       } else if (file.name == "section.json") {
@@ -44,10 +48,16 @@ function getFolderFiles(folderPath: string, structure: any[]) {
         console.log("front matter", matter(markdownWithMeta));
         const { data: frontMatter } = matter(markdownWithMeta);
         console.log(frontMatter.title);
+        console.log('folderPath', folderPath)
+        console.log('middle bit', typeof folderPath.split("docs\\content\\")[1])
+        console.log('modified', folderPath.split("docs\\content")[1].replace(/\\/g, "/"));
+        console.log("new folder path", "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", ""));
+        const slug = "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "");
         mutatedStrtucture.push({
           id: file.name,
           title: frontMatter.title,
           children: [],
+          slug: slug,
         });
       }
     }
@@ -58,6 +68,7 @@ export default function SidebarDocsTab(props:any) {
     console.log('props', props)
     return (
       <>
+      <a href={props.item.slug}>
         <li key={props.item.id}>
           <button
             type="button"
@@ -118,6 +129,7 @@ export default function SidebarDocsTab(props:any) {
 
           </ul>
         </li>
+        </a>
       </>
     );
   };
