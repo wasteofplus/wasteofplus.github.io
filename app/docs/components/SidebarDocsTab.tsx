@@ -56,13 +56,17 @@ function getFolderFiles(folderPath: string, structure: any[]) {
         console.log('modified', folderPath.split("docs\\content")[1].replace(/\\/g, "/"));
         console.log("new folder path", "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", ""));
         slug = "/docs" + folderPath.split("docs\\content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "");
-        } else {
+        } else if (folderPath.slice(-1)=="/") {
           console.log('evaluating forward slash env')
           console.log('middle bits', folderPath.split("docs/content/"))
           console.log('modified', folderPath.split("docs/content/")[1].replace(/\\/g, "/"));
           console.log('filename', file.name)
           console.log('modified filename', file.name.replace(".mdx", ""))
           slug = "/docs" + folderPath.split("docs/content")[1].replace(/\\/g, "/") + "/" + file.name.replace(".mdx", "")
+        } else {
+          slug = "/docs" + folderPath + "/" + file.name.replace(".mdx", "")
+        }
+
         }
 
         mutatedStrtucture.push({
