@@ -1,9 +1,8 @@
 {
     "order": 1,
-    "title": "Hello World",
-    "description": "This is a sample page.",
-    "badge": "New",
-    "tags": [],
+    "title": "Developing Addons",
+    "description": "how to develop an addon.",
+    "tags": ["Section"],
     "thumbnailUrl": "/banner2.png"
 
 }

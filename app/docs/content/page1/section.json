@@ -1,8 +1,7 @@
 {
     "order": 1,
-    "title": "Hello World",
-    "description": "This is a sample page.",
-    "badge": "New",
+    "title": "Contributing",
+    "description": "Information on how to contribute to wasteof.plus.",
     "thumbnailUrl": "/banner-2.png",
-    "tags": []
+    "tags": ["Section"]
 }

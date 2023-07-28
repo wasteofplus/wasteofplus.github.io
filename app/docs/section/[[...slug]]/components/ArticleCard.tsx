@@ -13,10 +13,12 @@ export default function ArticleCard(props: {
         // className="img-fluid mt-1 rounded-lg"
         alt="thumbnail"
         width="0"
-        height="50"
+        height="100"
         sizes="100vw"
+        style={{objectFit:"cover"}}
+
         className="w-full h-32"
-        objectFit="repeat"
+        // objectFit="cover"
       />
       <div className="flex justify-between items-center mb-4 mt-3 text-gray-500">
         <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
@@ -24,9 +26,11 @@ export default function ArticleCard(props: {
             src="/icons/article.svg"
             alt="article icon"
             width={16}
+
             height={16}
+
           />
-          Article
+          {props.tags[0]}
         </span>
         <span className="text-sm"></span>
       </div>
