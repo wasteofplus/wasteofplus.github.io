@@ -25,9 +25,13 @@ function getFolderFiles(folderPath: string, structure: any[]) {
           "/" +
           file.name.replace(".mdx", "");
       } else {
-        console.log('folderpath1', folderPath)
-        slug = "/docs/section" + folderPath + "/" + file.name.replace(".mdx", "");
-        console.log('section slug', slug)
+        console.log("folderpath1", folderPath);
+        slug =
+          "/docs/section" +
+          folderPath.split("docs/content")[1].replace(/\\/g, "/") +
+          +"/" +
+          file.name.replace(".mdx", "");
+        console.log("section slug", slug);
       }
 
       try {
@@ -102,20 +106,26 @@ function getFolderFiles(folderPath: string, structure: any[]) {
           file.name.replace(".mdx", "");
       } else {
         console.log("evaluating no slash env");
-        console.log("folderpath2", folderPath)
-        console.log("filename2", file.name)
-        console.log("modified filename2", file.name.split("docs/content/"))
-        console.log('split folder name', folderPath.split("docs/content/"))
-        console.log('split folder name length', folderPath.split("docs/content/").length)
-        if (folderPath.split("docs/content/").length==1) {
-          console.log('first if')
-        slug = "/docs" + folderPath + "/" + file.name.replace(".mdx", "");
-        console.log('slug', slug)
+        console.log("folderpath2", folderPath);
+        console.log("filename2", file.name);
+        console.log("modified filename2", file.name.split("docs/content/"));
+        console.log("split folder name", folderPath.split("docs/content/"));
+        console.log(
+          "split folder name length",
+          folderPath.split("docs/content/").length
+        );
+        if (folderPath.split("docs/content/").length == 1) {
+          console.log("first if");
+          slug = "/docs/" + folderPath + "/" + file.name.replace(".mdx", "");
+          console.log("slug", slug);
         } else {
-          console.log('second if')
-          slug = "/docs/" + folderPath.split("docs/content/")[1] + "/" + file.name.replace(".mdx", "");
-          console.log('slug', slug)
-
+          console.log("second if");
+          slug =
+            "/docs/" +
+            folderPath.split("docs/content/")[1] +
+            "/" +
+            file.name.replace(".mdx", "");
+          console.log("slug", slug);
         }
       }
 
