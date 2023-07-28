@@ -26,12 +26,21 @@ function getFolderFiles(folderPath: string, structure: any[]) {
           file.name.replace(".mdx", "");
       } else {
         console.log("folderpath1", folderPath);
-        slug =
-          "/docs/section" +
-          folderPath.split("docs/content")[1].replace(/\\/g, "/") +
+
+        if (folderPath.split("docs/content/").length == 1) {
+          slug =
+          "/docs/section"
           +"/" +
           file.name.replace(".mdx", "");
         console.log("section slug", slug);
+        } else {
+        slug =
+          "/docs/section" +
+          folderPath.split("docs/content")[1] +
+          +"/" +
+          file.name.replace(".mdx", "");
+        console.log("section slug", slug);
+        }
       }
 
       try {
