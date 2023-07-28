@@ -3,6 +3,7 @@
     "title": "Hello World",
     "description": "This is a sample page.",
     "badge": "New",
-    "thumbnailUrl": "/banner-2.png",
-    "tags": []
+    "tags": [],
+    "thumbnailUrl": "/banner2.png"
+
 }

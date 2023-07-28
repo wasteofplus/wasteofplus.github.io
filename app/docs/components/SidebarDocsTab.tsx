@@ -150,7 +150,7 @@ function getFolderFiles(folderPath: string, structure: any[]) {
 }
 
 export default function SidebarDocsTab(props: any) {
-  console.log("props", props);
+  // console.log("props", props);
   return (
     <>
       <a href={props.item.slug}>
