@@ -107,7 +107,7 @@ function getFolderFiles(folderPath: string, structure: any[]) {
         console.log("modified filename2", file.name.split("docs/content/"))
         console.log('split folder name', folderPath.split("docs/content/"))
         console.log('split folder name length', folderPath.split("docs/content/").length)
-        if (folderPath.split("docs/content/").length==0) {
+        if (folderPath.split("docs/content/").length==1) {
           console.log('first if')
         slug = "/docs" + folderPath + "/" + file.name.replace(".mdx", "");
         console.log('slug', slug)
