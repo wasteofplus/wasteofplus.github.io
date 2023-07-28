@@ -125,7 +125,7 @@ function getFolderFiles(folderPath: string, structure: any[]) {
         );
         if (folderPath.split("docs/content/").length == 1) {
           console.log("first if");
-          slug = "/docs/"  + "/" + file.name.replace(".mdx", "");
+          slug = "/docs/"  + file.name.replace(".mdx", "");
           console.log("slug", slug);
         } else {
           console.log("second if");
