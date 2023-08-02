@@ -1,10 +1,18 @@
 "use client";
 import React, {use, useState} from "react";
 import SidebarDocsTab from "./SidebarDocsTab";
+import {usePathname} from 'next/navigation';
 
 export default function DocsSidebar(props: any) {
-    console.log("DocsSidebar props", props);
-    const selectedTab = useState(props.selectedTab)
+  const pathname = usePathname()
+  console.log('router', pathname)
+    // console.log("DocsSidebar props", props);
+    const selectedTabPath = pathname;
+    console.log('selectedTabPath', selectedTabPath)
+    const [selectedTab, setSelectedTab] = useState(selectedTabPath)
+    console.log('selectedTab', selectedTab)
+    console.log('sidebartabs', JSON.stringify(props.sidebarTabs))
+    console.log('filtersidebar', props.sidebarTabs.filter((item: any) => item.slug == selectedTab))
     return (
         <aside
           id="default-sidebar"
@@ -14,7 +22,7 @@ export default function DocsSidebar(props: any) {
           <div className="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <ul className="space-y-2">
               {props.sidebarTabs.map((item: any) => (
-                <SidebarDocsTab selectedTab={selectedTab} key={item} item={item} styles={props.styles} />
+                <SidebarDocsTab thisTabSelected={selectedTab==item.slug} selectedTab={selectedTab} key={item} item={item} styles={props.styles} />
               ))}
             </ul>
 

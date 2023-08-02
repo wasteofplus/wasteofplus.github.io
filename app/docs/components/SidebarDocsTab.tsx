@@ -1,19 +1,19 @@
 export default function SidebarDocsTab(props: any) {
-  console.log("props.thistab", props);
+  console.log("props.thisTabSelected", props.thisTabSelected);
   return (
     <>
       <a href={props.item.slug}>
         <li key={props.item.id}>
           <button
             type="button"
-            className={`flex items-center p-2 pr-0 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group dark:text-white dark:hover:bg-gray-700 ${"docs/" + props.selectedTab == props.item.slug ? "hover:bg-gray-300 bg-gray-200" : "hover:bg-gray-100"}`}
+            className={`flex items-center p-2 pr-0 w-full text-base font-normal rounded-lg transition duration-75 group ${(props.thisTabSelected ? "dark:bg-gray-700 bg-gray-200 text-blue-600 dark:text-blue-400" : "dark:hover:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-100")}`}
             aria-controls="dropdown-pages"
             data-collapse-toggle="dropdown-pages"
           >
             {props.item.children.length == 0 ? (
               <svg
                 aria-hidden="true"
-                className="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                className={`flex-shrink-0 w-6 h-6 transition duration-75 ${(props.thisTabSelected ? "text-blue-500 dark:text-blue-300" : "group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white text-gray-400")}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ export default function SidebarDocsTab(props: any) {
             ) : (
               <svg
                 aria-hidden="true"
-                className="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className={`flex-shrink-0 w-6 h-6 transition duration-75  ${(props.thisTabSelected ? "text-blue-500 dark:text-blue-300" : "group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white text-gray-400")}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +61,8 @@ export default function SidebarDocsTab(props: any) {
             {props.item.children.length > 0
               ? props.item.children.map((item: any) => (
                   <SidebarDocsTab
+                  selectedTab={props.selectedTab}
+                    thisTabSelected={props.selectedTab==item.slug}
                     styles={props.styles}
                     key={item.id}
                     item={item}

@@ -18,6 +18,7 @@ export default function DashboardLayout({
     children: React.ReactNode
   }) {
 
+
     let sidebarTabs: any = getFolderFiles(path.resolve("app/docs/content/"), []);
 
     // Setup Sidebar Toggle
@@ -26,7 +27,7 @@ export default function DashboardLayout({
       <div className="antialiased h-auto bg-gray-50 dark:bg-gray-900">
         <NavBar />
 
-        <DocsSidebar sselectedTab="getting-started" styles={styles} sidebarTabs={sidebarTabs} />
+        <DocsSidebar selectedTab="/docs/getting-started" styles={styles} sidebarTabs={sidebarTabs} />
 
         <main className={`md:${styles.mainBar} p-4 md:ml-72 h-auto pt-20`}>
           <div className="border-gray-300 dark:border-gray-600 mb-4">
