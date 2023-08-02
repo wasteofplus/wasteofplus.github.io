@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Navbar, Button } from "flowbite-react";
 
 const NavBar = () => {
+  if (typeof window !== "undefined") {
     var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
     var themeToggleLightIcon = document.getElementById(
       "theme-toggle-light-icon"
@@ -309,6 +310,7 @@ const NavBar = () => {
         </div>
       </nav>
   );
+  }
 };
 
 export default NavBar;
