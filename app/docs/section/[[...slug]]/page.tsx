@@ -21,7 +21,8 @@ export default function Section({
   params: { slug: Array<string> };
 }) {
   let sidebarTabs: any = getFolderFiles(path.resolve("app/docs/content/"), []);
-
+  console.log('slug', params.slug)
+  console.log('sidebarTabs', sidebarTabs)
   const files = fs.readdirSync(
     path.resolve("app/docs/content/", params.slug.join("/")),
     {
