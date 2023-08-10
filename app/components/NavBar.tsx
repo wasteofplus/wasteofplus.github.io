@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 
 import { Navbar, Button } from "flowbite-react";
@@ -63,6 +63,8 @@ const NavBar = () => {
     }
     }
   }
+
+  const [activeTab, setActiveTab] = useState('home')
   return (
     <Navbar className="fixed w-full" fluid={true} rounded={true}>
       <Navbar.Brand href="https://flowbite.com/">
@@ -79,14 +81,14 @@ const NavBar = () => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="align-middle">
-        <Navbar.Link className="navlink" href="#hero" active={true}>
+        <Navbar.Link className="navlink" href="#hero" active={activeTab=='home'}>
           Home
         </Navbar.Link>
         <Navbar.Link className="navlink" href="#features">
           Features
         </Navbar.Link>
-        <Navbar.Link className="navlink" href="#addons">
-          Addons
+        <Navbar.Link className="navlink" href="#downloads">
+          Downloads
         </Navbar.Link>
         <Navbar.Link className="navlink" href="/docs">
           Docs

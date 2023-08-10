@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import HeroSection from "./components/HeroSection";
 import FeatureSection from "./components/FeatureSection";
 import AddonsSection from "./components/AddonsSection";
+import DownloadsSection from './components/DownloadsSection'
 
 import NavBar from "./components/NavBar";
 import Image from "next/image";
@@ -26,6 +27,7 @@ export default function Home() {
       <HeroSection />
       <FeatureSection />
       <AddonsSection />
+      <DownloadsSection />
       <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
     <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
@@ -36,6 +38,7 @@ export default function Home() {
                 </a>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
@@ -58,32 +61,38 @@ export default function Home() {
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
-                        <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus" className="hover:underline ">GitHub</a>
-                        </li>
+
                         <li>
-                            <a href="https://wasteof.money/wasteof.plus" className="hover:underline">Wasteof.Money</a>
+                            <a href="https://wasteof.money/wasteofplus" className="hover:underline">Wasteof.Money</a>
+                        </li>
+                        <li className="my-2">
+                    <iframe src="https://ghbtns.com/github-btn.html?user=imadeanaccount1&repo=wasteof.plus&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+                        </li>
+                        <li className="my-2">
+                        <iframe src="https://ghbtns.com/github-btn.html?user=wasteofplus&type=follow&count=true&size=large" frameBorder="0" scrolling="0" width="230" height="30" title="GitHub"></iframe>
+
                         </li>
                     </ul>
-                </div>
+                </div>                
 
                 <div>
-                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">DOCUMENTATION</h2>
+                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Install</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/README.md" className="hover:underline ">README.md</a>
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/README.md" className="hover:underline ">🦊 Firefox Addons</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/CONTRIBUTING.md" className="hover:underline">Contributing</a>
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/LICENSE" className="hover:underline">🤖 Chrome Web Store</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/LICENSE" className="hover:underline">License</a>
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/SECURITY.md" className="hover:underline">⭕ Opera Extensions</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/SECURITY.md" className="hover:underline">Security Policy</a>
+                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/SECURITY.md" className="hover:underline">💻 Microsoft Edge Extensions</a>
                         </li>
                     </ul>
                 </div>
+                
                 
                 {/* <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
