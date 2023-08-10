@@ -40,17 +40,17 @@ export default function Home() {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/issues" className="hover:underline">Reporting Issues</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/issues" className="hover:underline">Reporting Issues</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/discussions" className="hover:underline">Discussions</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/discussions" className="hover:underline">Discussions</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/actions" className="hover:underline">Actions</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/actions" className="hover:underline">Actions</a>
                         </li>
 
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/releases" className="hover:underline">Releases</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/releases" className="hover:underline">Releases</a>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +59,7 @@ export default function Home() {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus" className="hover:underline ">GitHub</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus" className="hover:underline ">GitHub</a>
                         </li>
                         <li>
                             <a href="https://wasteof.money/wasteof.plus" className="hover:underline">Wasteof.Money</a>
@@ -71,16 +71,16 @@ export default function Home() {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">DOCUMENTATION</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/README.md" className="hover:underline ">README.md</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/blob/main/README.md" className="hover:underline ">README.md</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/CONTRIBUTING.md" className="hover:underline">Contributing</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/blob/main/CONTRIBUTING.md" className="hover:underline">Contributing</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/LICENSE" className="hover:underline">License</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/blob/main/LICENSE" className="hover:underline">License</a>
                         </li>
                         <li className="mb-4">
-                            <a href="https://github.com/imadeanaccount1/wasteof.plus/blob/main/SECURITY.md" className="hover:underline">Security Policy</a>
+                            <a href="https://github.com/wasteofplus/wasteof.plus/blob/main/SECURITY.md" className="hover:underline">Security Policy</a>
                         </li>
                     </ul>
                 </div>
