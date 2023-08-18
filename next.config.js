@@ -2,7 +2,6 @@
 
 const nextConfig = {
   swcMinify: true,
-  output: "export",
   experimental: {
     mdxRs: true,
   },

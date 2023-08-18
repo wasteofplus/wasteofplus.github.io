@@ -1,61 +1,28 @@
-import React from "react";
+"use client";
+import React, {use, useState} from "react";
+import SidebarDocsTab from "./SidebarDocsTab";
+import {usePathname} from 'next/navigation';
 
-// Import Layout and Navigation Components
-import NavBar from "../components/NavBar";
-import SidebarDocsTab from "../components/SidebarDocsTab";
-import { getFolderFiles } from "../components/SidebarDocsTab";
-
-// Import Markdown/MDX and Style tools
-import ReactMarkdown from "react-markdown";
-import styles from "./page.module.css";
-import matter from "gray-matter";
-
-// Import Node.js Utils
-import fs from "fs";
-import path from "path";
-
-// Import MDX User Components
-import { CustomH1, CustomH2 } from "../components/user/CustomHeadings";
-import { CustomImage } from "../components/user/CustomImage";
-import { CustomDivider } from "../components/user/CustomLayout";
-
-export default function Doc({ params }: { params: { slug: string } }) {
-    // Get this page's markdown data
-    let source = null;
-    console.log('params.slug', params.slug)
-    if (params.slug.includes("%5Bslug%5D")) {
-      source = fs.readFileSync(
-        path.resolve("app/docs/pages/", `getting-started.mdx`),
-        "utf8"
-      );
-    } else {
-    source = fs.readFileSync(
-      path.resolve("app/docs/pages/", `${params.slug}.mdx`),
-      "utf8"
-    );
-    }
-
-    const { data, content } = matter(source);
-    const markdownBody = content;
-
-    let sidebarTabs: any = getFolderFiles(path.resolve("app/docs/pages/"), []);
-    console.log(JSON.stringify(sidebarTabs));
-
-    // Setup Sidebar Toggle
-
+export default function DocsSidebar(props: any) {
+  const pathname = usePathname()
+  console.log('router', pathname)
+    // console.log("DocsSidebar props", props);
+    const selectedTabPath = pathname;
+    console.log('selectedTabPath', selectedTabPath)
+    const [selectedTab, setSelectedTab] = useState(selectedTabPath)
+    console.log('selectedTab', selectedTab)
+    console.log('sidebartabs', JSON.stringify(props.sidebarTabs))
+    console.log('filtersidebar', props.sidebarTabs.filter((item: any) => item.slug == selectedTab))
     return (
-      <div className="antialiased bg-gray-50 dark:bg-gray-900">
-        <NavBar />
-
         <aside
           id="default-sidebar"
-          className={`${styles.sidebar} fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0`}
+          className={`${props.styles.sidebar} fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0`}
           aria-label="Sidenav"
         >
           <div className="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <ul className="space-y-2">
-              {sidebarTabs.map((item: any) => (
-                <SidebarDocsTab key={item} item={item} styles={styles} />
+              {props.sidebarTabs.map((item: any) => (
+                <SidebarDocsTab thisTabSelected={selectedTab==item.slug} selectedTab={selectedTab} key={item} item={item} styles={props.styles} />
               ))}
             </ul>
 
@@ -123,23 +90,5 @@ export default function Doc({ params }: { params: { slug: string } }) {
             </ul>
           </div>
         </aside>
-
-        <main className={`md:${styles.mainBar} p-4 md:ml-72 h-auto pt-20`}>
-          <div className="border-gray-300 dark:border-gray-600 h-96 mb-4">
-
-            <ReactMarkdown
-              components={{
-                h1: CustomH1,
-                h2: CustomH2,
-                img: CustomImage,
-                hr: CustomDivider,
-              }}
-            >
-              {markdownBody}
-            </ReactMarkdown>
-          </div>
-        </main>
-      </div>
-    );
-  }
-
+    )
+              }
