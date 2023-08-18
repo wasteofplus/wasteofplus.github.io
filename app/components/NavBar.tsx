@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 
 import { Navbar, Button } from "flowbite-react";
@@ -63,6 +63,8 @@ const NavBar = () => {
     }
     }
   }
+
+  const [activeTab, setActiveTab] = useState('home')
   return (
     <Navbar className="fixed w-full" fluid={true} rounded={true}>
       <Navbar.Brand href="https://flowbite.com/">
@@ -79,20 +81,20 @@ const NavBar = () => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="align-middle">
-        <Navbar.Link className="navlink" href="#hero" active={true}>
+        <Navbar.Link className="navlink" href="#hero" active={activeTab=='home'}>
           Home
         </Navbar.Link>
         <Navbar.Link className="navlink" href="#features">
           Features
         </Navbar.Link>
-        <Navbar.Link className="navlink" href="#addons">
-          Addons
+        <Navbar.Link className="navlink" href="#downloads">
+          Downloads
         </Navbar.Link>
         <Navbar.Link className="navlink" href="/docs">
           Docs
         </Navbar.Link>
         <a
-          href="https://github.com/wasteofplus/wasteof.plus/releases"
+          href="https://github.com/imadeanaccount1/wasteof.plus/releases"
           className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
         >
           View Releases
